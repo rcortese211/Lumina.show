@@ -1,0 +1,9 @@
+{
+  "domain": "lumina_show",
+  "name": "Lumina Show",
+  "version": "1.0.0",
+  "documentation": "https://github.com/rcortese211/Lumina.show",
+  "requirements": ["pychromecast", "zeroconf"],
+  "dependencies": [],
+  "codeowners": ["@rcortese211"]
+}
