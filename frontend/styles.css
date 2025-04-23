@@ -1,0 +1,17 @@
+/* Add CSS for timeline, layout editor, and playback UI */
+.timeline {
+  background-color: #f0f0f0;
+  padding: 16px;
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.playback-controls {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+}
