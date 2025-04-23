@@ -1,8 +1,11 @@
+from pychromecast import Chromecast
+from pychromecast.controllers.media import MediaController
+
 class LuminaShowAPI:
     def __init__(self):
         self.tracks = []
         self.layouts = {}
-        self.media_url = None
+        self.chromecast = None
 
     def add_track(self, track_data):
         """Add a new track to the timeline."""
@@ -20,7 +23,15 @@ class LuminaShowAPI:
         """Retrieve all layouts."""
         return self.layouts
 
+    def connect_chromecast(self, device_name):
+        """Connect to a Chromecast device."""
+        self.chromecast = Chromecast(device_name)
+        self.chromecast.wait()
+
     def play_media(self, media_url):
         """Play media via Chromecast."""
-        self.media_url = media_url
-        # Implement casting logic using pychromecast or similar library
+        if self.chromecast:
+            controller = MediaController()
+            self.chromecast.register_handler(controller)
+            controller.play_media(media_url, content_type="video/mp4")
+            controller.block_until_active()
