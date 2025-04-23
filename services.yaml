@@ -1,0 +1,16 @@
+cast_media:
+  description: "Cast a media file to a device"
+  fields:
+    media_url:
+      description: "URL of the media file to cast"
+      example: "http://example.com/video.mp4"
+
+add_timeline_effect:
+  description: "Add an effect to a timeline track"
+  fields:
+    track_id:
+      description: "ID of the track"
+      example: 1
+    effect_data:
+      description: "Effect data (e.g., color, speed, etc.)"
+      example: {"effect": "sparkle", "color": "blue"}
